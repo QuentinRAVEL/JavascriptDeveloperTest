@@ -95,6 +95,13 @@ Permet de filtrer les pays/personnes/animaux si la chaîne de caractère _'patte
 
 En l'absence de l'un ou l'autre de ces paramétres de commande, une aide sera affichée.
 
+### Exemple de lancement du programme
+
+- node src/app.js --filter=ry
+- node src/app.js --filter=Zoo
+- node src/app.js --filter=Test
+- node src/app.js --count
+
 ## Tests
 
 Pour lancer les tests unitaires correspondant aux fonctions utilisées par l'application, contenues dans le fichier ./src/services/services.js :
