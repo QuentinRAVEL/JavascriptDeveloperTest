@@ -1,0 +1,179 @@
+assert = require("assert");
+
+const {
+  reduceAndFilterByPatternAnimalName,
+  countPeopleAndAnimals
+} = require('../src/services/services.js')
+
+// Données de test de base
+const dataTest = [
+  {
+    name: 'First Land',
+    people: [
+      {
+        name: 'First Person',
+        animals: [
+          { name: 'First animal' }
+        ]
+      },
+      {
+        name: 'Second Person',
+        animals: [
+          { name: 'First animal' },  
+          { name: 'Second animal' }
+        ]
+      }
+    ]
+  },
+  {
+    name: 'Second Land',
+    people: [
+      {
+        name: 'Third Person',
+        animals: [
+          { name: 'First animal' },
+          { name: 'Second animal' },
+          { name: 'Third animal' }
+        ]
+      }
+    ]
+  }
+];
+
+// Données de test filtrées sur le nom d'animal "First"
+const dataTestFiltered = [
+  {
+    name: 'First Land',
+    people: [
+      {
+        name: 'First Person',
+        animals: [
+          { name: 'First animal' }
+        ]
+      },
+      {
+        name: 'Second Person',
+        animals: [
+          { name: 'First animal' }
+        ]
+      }
+    ]
+  },
+  {
+    name: 'Second Land',
+    people: [
+      {
+        name: 'Third Person',
+        animals: [
+          { name: 'First animal' }
+        ]
+      }
+    ]
+  }
+];
+
+// Données de test avec comptabilisation des enfants
+const dataTestCount = [
+  {
+    name: 'First Land [2]',
+    people: [
+      {
+        name: 'First Person [1]',
+        animals: [
+          { name: 'First animal' }
+        ]
+      },
+      {
+        name: 'Second Person [2]',
+        animals: [
+          { name: 'First animal' },  
+          { name: 'Second animal' }
+        ]
+      }
+    ]
+  },
+  {
+    name: 'Second Land [1]',
+    people: [
+      {
+        name: 'Third Person [3]',
+        animals: [
+          { name: 'First animal' },
+          { name: 'Second animal' },
+          { name: 'Third animal' }
+        ]
+      }
+    ]
+  }
+];
+
+/*
+* Tests reduceAndFilterByPatternAnimalName
+*/
+describe("Premier test de la fonction reduceAndFilterByPatternAnimalName", function() {
+  describe("Test avec passage en premier paramétre d'un objet vide", function() {
+    it("Cela doit retouner un tableau vide", function() {
+      var result = reduceAndFilterByPatternAnimalName([], "");
+      assert.equal(0,result.length);
+    }); 
+  });
+});
+
+
+describe("Deuxième test de la fonction reduceAndFilterByPatternAnimalName", function() {
+  describe("Test avec passage en second paramétre d'une chaine vide", function() {
+    it("Cela doit retouner l'équivalent du tableau d'origine en entier (non filtré)", function() {
+      var result = reduceAndFilterByPatternAnimalName(dataTest, "");
+      assert.deepStrictEqual(dataTest,result);
+    }); 
+  });
+});
+
+describe("Troisième test de la fonction reduceAndFilterByPatternAnimalName", function() {
+  describe("Test avec passage en second paramétre d'une chaine contenu dans tous les noms d'animaux", function() {
+    it("Cela doit retouner l'équivalent du tableau d'origine en entier", function() {
+      var result = reduceAndFilterByPatternAnimalName(dataTest, "animal");
+      assert.deepStrictEqual(dataTest,result);
+    }); 
+  });
+});
+
+describe("Quatrième test de la fonction reduceAndFilterByPatternAnimalName", function() {
+  describe("Test avec passage en second paramétre d'une chaine contenu dans aucun nom d'animal", function() {
+    it("Cela doit retouner un tableau vide", function() {
+      var result = reduceAndFilterByPatternAnimalName(dataTest, "TEST");
+      assert.equal(0,result.length);
+    }); 
+  });
+});
+
+describe("Cinquième test de la fonction reduceAndFilterByPatternAnimalName", function() {
+  describe("Test avec passage en seconde paramétre d'une chaine vide", function() {
+    it("Cela doit retouner un tableau filtré tel qu'attendu", function() {
+      var result = reduceAndFilterByPatternAnimalName(dataTest, "First");
+      assert.deepStrictEqual(dataTestFiltered,result);
+    }); 
+  });
+});
+
+
+/*
+* Tests countPeopleAndAnimals
+*/
+describe("Premier test de la fonction countPeopleAndAnimals", function() {
+  describe("Test avec passage en premier paramétre d'un objet vide", function() {
+    it("Cela doit retouner un tableau vide", function() {
+      var result = countPeopleAndAnimals([]);
+      assert.equal(0,result.length);
+    }); 
+  });
+});
+
+describe("Second test de la fonction countPeopleAndAnimals", function() {
+  describe("Test avec passage de l'objet dataTest", function() {
+    it("Cela doit retouner un tableau tel qu'attendu", function() {
+      var result = countPeopleAndAnimals(dataTest);
+      assert.deepStrictEqual(dataTestCount,result);
+    }); 
+  });
+});
