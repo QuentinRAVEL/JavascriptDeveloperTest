@@ -107,7 +107,7 @@ En l'absence de l'un ou l'autre de ces paramétres de commande, une aide sera af
 Pour lancer les tests unitaires correspondant aux fonctions utilisées par l'application, contenues dans le fichier ./src/services/services.js :
 
 ```bash
-mocha ./test/services.test.js
+mocha test/services.test.js
 ```
 ou directement dans le répertoire principal (contenant ce _README.md_) :
 ```bash
