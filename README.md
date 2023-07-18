@@ -31,7 +31,7 @@ const data = [
 
 pour ne renvoyer que les pays/personnes dont les noms des animaux contiennent un certain "pattern".
 
-- Il permet de visualiser le nombre *de noeuds enfants* de chaque objet *pays* ou *personne* :
+- Il permet de visualiser le nombre *de noeuds enfants* de chaque objet parent (*pays* ou *personne*) :
 
 Le résulat obtenu sera un tableau de la forme :
 
