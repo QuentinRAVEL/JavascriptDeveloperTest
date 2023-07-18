@@ -5,7 +5,7 @@ Ce programme implémente une interface en ligne de commande en Node.js.
 Deux fonctionnalités sont possibles :
 
 1) Il permet de filter un object JSON de type :
-```JSON
+```Javascript
 const data = [
   {
     name: 'First Land',
@@ -32,7 +32,7 @@ pour ne renvoyer que les pays/personnes dont les noms des animaux contiennent un
 2) Il permet de visualiser le nombre _de noeuds enfants_ de chaque objet _pays_ ou _personne_ :
 
 Le résulat obtenu sera un objet de la forme :
-```JSON
+```Javascript
 const data = [
   {
     name: 'First Land [2]',
