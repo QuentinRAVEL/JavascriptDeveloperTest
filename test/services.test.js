@@ -130,7 +130,7 @@ describe("Deuxième test de la fonction reduceAndFilterByPatternAnimalName", fun
 });
 
 describe("Troisième test de la fonction reduceAndFilterByPatternAnimalName", function() {
-  describe("Test avec passage en second paramétre d'une chaine contenu dans tous les noms d'animaux", function() {
+  describe("Test avec passage en second paramétre d'une chaine contenue dans tous les noms d'animaux", function() {
     it("Cela doit retouner l'équivalent du tableau d'origine en entier", function() {
       var result = reduceAndFilterByPatternAnimalName(dataTest, "animal");
       assert.deepStrictEqual(dataTest,result);
@@ -139,7 +139,7 @@ describe("Troisième test de la fonction reduceAndFilterByPatternAnimalName", fu
 });
 
 describe("Quatrième test de la fonction reduceAndFilterByPatternAnimalName", function() {
-  describe("Test avec passage en second paramétre d'une chaine contenu dans aucun nom d'animal", function() {
+  describe("Test avec passage en second paramétre d'une chaine contenue dans aucun nom d'animal", function() {
     it("Cela doit retouner un tableau vide", function() {
       var result = reduceAndFilterByPatternAnimalName(dataTest, "TEST");
       assert.equal(0,result.length);
