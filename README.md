@@ -86,7 +86,7 @@ npm install -g mocha
 
 ## Démarrage
 
-Au moins un des deux arguments suivants doit être passé en paramétre de ce programme :'
+Au moins un des deux arguments suivants doit être passé en paramétre de ce programme :
 
 ```bash
 --count
