@@ -4,7 +4,7 @@ Ce programme implémente une interface en ligne de commande en Node.js.
 
 Deux fonctionnalités sont possibles :
 
-- Il permet de filter un tableau du type :
+- Il permet de filtrer un tableau du type :
 
 ```Javascript
 const data = [
