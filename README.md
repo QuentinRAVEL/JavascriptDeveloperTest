@@ -4,7 +4,7 @@ Ce programme implémente une interface en ligne de commande en Node.js.
 
 Deux fonctionnalités sont possibles :
 
-1) Il permet de filter un tableau du type :
+- Il permet de filter un tableau du type :
 ```Javascript
 const data = [
   {
@@ -29,7 +29,7 @@ const data = [
 ```
 pour ne renvoyer que les pays/personnes dont les noms des animaux contiennent un certain "pattern".
 
-2) Il permet de visualiser le nombre _de noeuds enfants_ de chaque objet _pays_ ou _personne_ :
+- Il permet de visualiser le nombre _de noeuds enfants_ de chaque objet _pays_ ou _personne_ :
 
 Le résulat obtenu sera un tableau de la forme :
 ```Javascript
@@ -57,15 +57,15 @@ const data = [
 
 ### Structure du projet
 
-_README.md_ : ce fichier d'aide
-_data/data.js_ : le fichier de données utilisé par le programme principal
-_src/app.js_ : le fichier de programme principal
-_src/services/services.js_ : le fichier de méthodes utilitaires utilisées par le programme principal
-_test/test.services.js_ : le fichier des tests unitaires des méthodes utilitaires utilisées par le programme principal
+- *README.md* : ce fichier d'aide
+- *data/data.js* : le fichier de données utilisé par le programme principal
+- *src/app.js* : le fichier de programme principal
+- *src/services/services.js* : le fichier de méthodes utilitaires utilisées par le programme principal
+- *test/test.services.js* : le fichier des tests unitaires des méthodes utilitaires utilisées par le programme principal
 
 ### Pré-requis
 
-Le fichier de données doit se trouver dans un repértoire _"data"_ et s'appeler _"data.js"_ comme décrit dans le précédent paragraphe.
+Le fichier de données doit se trouver dans un repértoire *"data"* et s'appeler *"data.js"* comme décrit dans le précédent paragraphe.
 
 ### Installation
 
