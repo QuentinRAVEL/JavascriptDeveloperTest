@@ -5,6 +5,7 @@ Ce programme implémente une interface en ligne de commande en Node.js.
 Deux fonctionnalités sont possibles :
 
 - Il permet de filter un tableau du type :
+
 ```Javascript
 const data = [
   {
@@ -19,7 +20,7 @@ const data = [
       {
         name: 'Second Person',
         animals: [
-          { name: 'First animal' },  
+          { name: 'First animal' },
           { name: 'Second animal' }
         ]
       }
@@ -27,11 +28,13 @@ const data = [
   }
 ]
 ```
+
 pour ne renvoyer que les pays/personnes dont les noms des animaux contiennent un certain "pattern".
 
-- Il permet de visualiser le nombre _de noeuds enfants_ de chaque objet _pays_ ou _personne_ :
+- Il permet de visualiser le nombre *de noeuds enfants* de chaque objet *pays* ou *personne* :
 
 Le résulat obtenu sera un tableau de la forme :
+
 ```Javascript
 const data = [
   {
@@ -46,7 +49,7 @@ const data = [
       {
         name: 'Second Person [2]',
         animals: [
-          { name: 'First animal' },  
+          { name: 'First animal' },
           { name: 'Second animal' }
         ]
       }
@@ -69,12 +72,14 @@ Le fichier de données doit se trouver dans un repértoire *"data"* et s'appeler
 
 ### Installation
 
-Pour installer la librairie Mocha pour les tests :
+Pour installer localement la librairie Mocha pour les tests :
 
 ```bash
 npm install mocha
 ```
-ou
+
+ou en installation globale :
+
 ```bash
 npm install -g mocha
 ```
@@ -86,14 +91,16 @@ Au moins un des deux arguments suivants doit être passé en paramétre de ce pr
 ```bash
 --count
 ```
+
 Permet de visualiser la comptabilisation du nombre de personnes par pays et d'animaux par personne.
 
 ```bash
 --filter=pattern
 ```
-Permet de filtrer les pays/personnes/animaux si la chaîne de caractère _'pattern'_ est contenu dans le nom de l'animal, le filtre est sensible à la casse.
 
-En l'absence de l'un ou l'autre de ces paramétres de commande, une aide sera affichée.
+Permet de filtrer les pays/personnes/animaux si la chaîne de caractère *pattern* est contenu dans le nom de l'animal, le filtre est sensible à la casse.
+
+En l'absence de l'un ou l'autre de ces paramétres de commande, une aide sur les paramètres à employer sera affichée.
 
 ### Exemple de lancement du programme
 
@@ -109,16 +116,17 @@ Pour lancer les tests unitaires correspondant aux fonctions utilisées par l'app
 ```bash
 mocha test/services.test.js
 ```
+
 ou directement dans le répertoire principal (contenant ce _README.md_) :
+
 ```bash
 mocha
 ```
 
 ## Versions
+
 **Dernière version stable :** 1.0
 
 ## Auteurs
 
-* **Quentin RAVEL** 
-
-
+- **Quentin RAVEL**

@@ -4,7 +4,6 @@ const {
   countPeopleAndAnimals
 } = require('./services/services.js')
 
-
 // Récupération des arguments et des commmandes à lancer
 var myArgs = process.argv.slice(2)
 const isFilterCmnd = myArgs.some(arg => arg.indexOf('--filter=') > -1)
@@ -27,7 +26,6 @@ if (!isFilterCmnd && !isCountCmd) {
   )
   console.log(' ')
 } else {
-
   // Si la commande de filtre a été detectée
   if (isFilterCmnd) {
     argFilter = myArgs.find(arg => arg.indexOf('--filter=') > -1)
@@ -36,15 +34,16 @@ if (!isFilterCmnd && !isCountCmd) {
     if (pattern.length === 0)
       console.log('Le pattern est vide, tout le tableau sera affiché.')
     else
-      console.log('Affichage des pays/personnes/animaux filtrés par le pattern : ' + pattern)
+      console.log(
+        'Affichage des pays/personnes/animaux filtrés par le pattern : ' +
+          pattern
+      )
     let countries = getAllCountries()
     let filterCountries = reduceAndFilterByPatternAnimalName(countries, pattern)
     if (filterCountries.length) {
-      console.log(
-          JSON.stringify(filterCountries, null, 2)
-      )
+      console.log(JSON.stringify(filterCountries, null, 2))
     } else {
-      console.log('Aucun élément n\'a été trouvé avec ce pattern.')
+      console.log("Aucun élément n'a été trouvé avec ce pattern.")
     }
 
     console.log(' ')
