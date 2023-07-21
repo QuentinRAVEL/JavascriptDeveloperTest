@@ -3,7 +3,7 @@ const {
   reduceAndFilterByPatternAnimalName,
   countPeopleAndAnimals,
   countArrayChildren,
-  reduceByPatternAndKey
+  reduceByPatternAndKeyProperty
 } = require('./services/services.js')
 
 // Récupération des arguments et des commmandes à lancer
@@ -41,7 +41,7 @@ if (!isFilterCmnd && !isCountCmd) {
           pattern
       )
     let countries = getAllCountries()
-    let filterCountries = reduceByPatternAndKey(countries, 'animals.name', pattern)
+    let filterCountries = reduceByPatternAndKeyProperty(countries, 'animals.name', pattern)
     if (filterCountries.length) {
       console.log(JSON.stringify(filterCountries, null, 2))
     } else {

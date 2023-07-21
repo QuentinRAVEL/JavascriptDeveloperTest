@@ -45,7 +45,7 @@ function reduceAndFilterByPatternAnimalName (countries, pattern) {
  *
  * Renvoie l'objet JS filtré, via la fonction "reduce", sur la valeur de la clé recherchée (keySearch)
  */
-function reduceByPatternAndKey (objets, keyAndPropertySearch, pattern) {
+function reduceByPatternAndKeyProperty (objets, keyAndPropertySearch, pattern) {
 
   if (keyAndPropertySearch.indexOf(".") === -1) return [];
 
@@ -60,7 +60,7 @@ function reduceByPatternAndKey (objets, keyAndPropertySearch, pattern) {
         countChildren =  objet[key].length;
       }
       else if (Array.isArray(value)) {
-        objet[key] = reduceByPatternAndKey(value, keyAndPropertySearch, pattern);
+        objet[key] = reduceByPatternAndKeyProperty(value, keyAndPropertySearch, pattern);
         countChildren =  objet[key].length;
       }
       else {
@@ -70,24 +70,6 @@ function reduceByPatternAndKey (objets, keyAndPropertySearch, pattern) {
     if (countChildren)
       acc.push(objet);
     return acc
-  }, [])
-
-
-  // on applique la fonction reduce pour chaque pays
-  return objets.reduce((c, country) => {
-    // on applique la fonction reduce pour chaque personne
-    let people = country.people.reduce((p, person) => {
-      // On filtre les animaux de la personne sur le fait que le nom de l'animal contient le pattern.
-      let animals = person.animals.filter(
-        animal => animal.name.indexOf(pattern) > -1
-      )
-      // Si le tableau (des animaux) n'est pas vide, on l'ajoute à l'accumulateur (des personnes)
-      if (animals.length) p.push({ name: person.name, animals: animals })
-      return p
-    }, [])
-    // Si le tableau (des personnes) n'est pas vide, on l'ajoute à l'accumulateur (des pays)
-    if (people.length) c.push({ name: country.name, people: people })
-    return c
   }, [])
 }
 
@@ -140,5 +122,5 @@ module.exports = {
   reduceAndFilterByPatternAnimalName,
   countPeopleAndAnimals,
   countArrayChildren,
-  reduceByPatternAndKey
+  reduceByPatternAndKeyProperty
 }
